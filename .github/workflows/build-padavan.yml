@@ -120,6 +120,9 @@ jobs:
         #tunsafe
         sed -i '/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d' .config
         echo "CONFIG_FIRMWARE_INCLUDE_TUNSAFE=y" >> .config
+        #openvpn
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENVPN/d' .config
+        echo "CONFIG_FIRMWARE_INCLUDE_OPENVPN=y" >> .config
         #aliddns
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' .config
         echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config
