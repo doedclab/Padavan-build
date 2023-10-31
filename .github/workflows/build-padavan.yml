@@ -67,27 +67,8 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN/d' .config #删除配置项smartdns
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME/d' .config #删除配置项ADGUARDHOME
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY/d' .config #删除配置项SRELAY代理
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_FTPD/d' .config #删除配置项FTPB服务器
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD/d' .config #删除配置项SMB服务器
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD36/d' .config #删除配置项SMB服务器
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD_SYSLOG/d' .config #删除配置项SMB服务器
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_WINS/d' .config #删除配置项SMB服务器
-        sed -i '/CONFIG_FIRMWARE_ENABLE_USB/d' .config #删除配置项USB支持
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_HID/d' .config #删除配置项USB支持
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_SERIAL/d' .config #删除配置项USB支持
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_AUDIO/d' .config #删除配置项USB支持
-        sed -i '/CONFIG_FIRMWARE_ENABLE_UFSD/d' .config #删除配置项文件系统支持
-        sed -i '/CONFIG_FIRMWARE_ENABLE_FAT/d' .config #删除配置项文件系统支持
-        sed -i '/CONFIG_FIRMWARE_ENABLE_EXFAT/d' .config #删除配置项文件系统支持
-        sed -i '/CONFIG_FIRMWARE_ENABLE_EXT2/d' .config #删除配置项文件系统支持
-        sed -i '/CONFIG_FIRMWARE_ENABLE_EXT3/d' .config #删除配置项文件系统支持
-        sed -i '/CONFIG_FIRMWARE_ENABLE_EXT4/d' .config #删除配置项文件系统支持
-        sed -i '/CONFIG_FIRMWARE_ENABLE_XFS/d' .config #删除配置项文件系统支持
-        sed -i '/CONFIG_FIRMWARE_ENABLE_FUSE/d' .config #删除配置项文件系统支持
-        sed -i '/CONFIG_FIRMWARE_ENABLE_SWAP/d' .config #删除配置项文件系统支持
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_FTPD/d' .config #删除配置项FTP服务器
         sed -i '/CONFIG_FIRMWARE_INCLUDE_UVC/d' .config #删除配置项UVC camera
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_LPRD/d' .config #删除配置项LPRD打印机
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_U2EC/d' .config #删除配置项USB打印机
         sed -i '/CONFIG_FIRMWARE_INCLUDE_EAP_PEAP/d' .config #删除配置项EAP_PEAP
         sed -i '/CONFIG_FIRMWARE_INCLUDE_XUPNPD/d' .config #删除配置项媒体服务相关
         sed -i '/CONFIG_FIRMWARE_INCLUDE_MINIDLNA/d' .config #删除配置项媒体服务相关
@@ -117,9 +98,6 @@ jobs:
         #override
         sed -i '/CONFIG_FIRMWARE_CPU_900MHZ/d' .config
         echo "CONFIG_FIRMWARE_CPU_900MHZ=y" >> .config
-        #tunsafe
-        sed -i '/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d' .config
-        echo "CONFIG_FIRMWARE_INCLUDE_TUNSAFE=y" >> .config
         #openvpn
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENVPN/d' .config
         echo "CONFIG_FIRMWARE_INCLUDE_OPENVPN=y" >> .config
