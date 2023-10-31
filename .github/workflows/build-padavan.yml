@@ -67,7 +67,24 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN/d' .config #删除配置项smartdns
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME/d' .config #删除配置项ADGUARDHOME
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY/d' .config #删除配置项SRELAY代理
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_FTPD/d' .config #删除配置项FTPB服务器
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD/d' .config #删除配置项SMB服务器
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD36/d' .config #删除配置项SMB服务器
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD_SYSLOG/d' .config #删除配置项SMB服务器
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_WINS/d' .config #删除配置项SMB服务器
         sed -i '/CONFIG_FIRMWARE_ENABLE_USB/d' .config #删除配置项USB支持
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_HID/d' .config #删除配置项USB支持
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_SERIAL/d' .config #删除配置项USB支持
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_AUDIO/d' .config #删除配置项USB支持
+        sed -i '/CONFIG_FIRMWARE_ENABLE_UFSD/d' .config #删除配置项文件系统支持
+        sed -i '/CONFIG_FIRMWARE_ENABLE_FAT/d' .config #删除配置项文件系统支持
+        sed -i '/CONFIG_FIRMWARE_ENABLE_EXFAT/d' .config #删除配置项文件系统支持
+        sed -i '/CONFIG_FIRMWARE_ENABLE_EXT2/d' .config #删除配置项文件系统支持
+        sed -i '/CONFIG_FIRMWARE_ENABLE_EXT3/d' .config #删除配置项文件系统支持
+        sed -i '/CONFIG_FIRMWARE_ENABLE_EXT4/d' .config #删除配置项文件系统支持
+        sed -i '/CONFIG_FIRMWARE_ENABLE_XFS/d' .config #删除配置项文件系统支持
+        sed -i '/CONFIG_FIRMWARE_ENABLE_FUSE/d' .config #删除配置项文件系统支持
+        sed -i '/CONFIG_FIRMWARE_ENABLE_SWAP/d' .config #删除配置项文件系统支持
         sed -i '/CONFIG_FIRMWARE_INCLUDE_UVC/d' .config #删除配置项UVC camera
         sed -i '/CONFIG_FIRMWARE_INCLUDE_LPRD/d' .config #删除配置项LPRD打印机
         sed -i '/CONFIG_FIRMWARE_INCLUDE_U2EC/d' .config #删除配置项USB打印机
@@ -106,8 +123,10 @@ jobs:
         #aliddns
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' .config
         echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config
+        #kms
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_VLMCSD/d' .config
+        echo "CCONFIG_FIRMWARE_INCLUDE_VLMCSD=y" >> .config
         #########################################################################################
-
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
         sudo mv -f images/*.trx /opt/images/
